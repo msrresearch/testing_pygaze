@@ -20,14 +20,10 @@ else:
 tracker.start_recording()
 
 while True:
-	info_text = 'pos: {:>15} | 3D eye position: {:<20}'.format(tracker.sample(),tracker.eye_position_3d())
+	info_text = 'pos: {:>15} | 3D gaze point: {:<20}'.format(tracker.sample(),tracker.gaze_position_3d())
 	screen.clear()
 	screen.draw_text(info_text,'black')
 	display.fill(screen)
 	display.show()
 	print(info_text)
 	libtime.pause(1000)
-
-
-
-print('test')
