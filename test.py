@@ -20,7 +20,7 @@ else:
 tracker.start_recording()
 
 while True:
-	info_text = 'pos: {:>15} | pupil size: {:<20}'.format(tracker.sample(),tracker.pupil_size())
+	info_text = 'pos: {:>15} | 3D eye position: {:<20}'.format(tracker.sample(),tracker.eye_position_3d())
 	screen.clear()
 	screen.draw_text(info_text,'black')
 	display.fill(screen)
