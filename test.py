@@ -47,10 +47,14 @@ bd.start()
 
 while True:
 	pos = tracker.sample()
-	gaze_vector = tracker.gaze_vector()
 	info_text = 'pos: {:>15}'.format(pos)
-	info_text += '\neye position: {:<60}'.format(tracker.eye_position_3d())
-	info_text += '\n3D gaze vector: {:<90}'.format(gaze_vector)
+	try:
+		gaze_vector = tracker.gaze_vector()
+		info_text += '\neye position: {:<60}'.format(tracker.eye_position_3d())
+		info_text += '\n3D gaze vector: {:<90}'.format(gaze_vector)
+	except AttributeError:
+		info_text += '\neye position: NOT SUPPORTED!'
+		info_text += '\n3D gaze vector: NOT SUPPORTED!'
 	info_text += '\npupil size: {:>15}'.format(tracker.pupil_size())
 	info_text += '\nblink_start: {:>15} | blink_end: {:>15} | blink_dur: {:>15}'.format(bd.blink_start,bd.blink_end,bd.blink_dur)
 	screen.clear()

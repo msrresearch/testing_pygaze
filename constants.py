@@ -66,6 +66,7 @@ JOYTIMEOUT = None # None for no timeout, or a value in milliseconds
 TRACKERTYPE = 'tobii'
 SACCVELTHRESH = 35 # degrees per second, saccade velocity threshold
 SACCACCTHRESH = 9500 # degrees per second, saccade acceleration threshold
+BLINKTHRESH = 100 # milliseconds, blink detection threshold
 EVENTDETECTION = 'PyGaze'
 # EyeLink only
 # SMI only
